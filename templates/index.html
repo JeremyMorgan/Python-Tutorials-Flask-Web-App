@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drone Comparison</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+</head>
+<style>
+    body {
+        background-color: #004d79;
+        /* Sets the background color to blue */
+    }
+
+    table {
+        background-color: #fff;
+        /* Sets the table background color to white */
+        border-radius: 15px;
+    }
+
+    h1 {
+        color: #fff;
+    }
+
+    .table-striped tbody tr:nth-of-type(odd) {
+        background-color: #c9c9c9;
+        /* Sets the background color of odd rows to light gray */
+    }
+</style>
+
+<body>
+    <div class="container">
+        <h1 class="text-center my-4">Top Best Selling Drone Comparison</h1>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Flight Time (minutes)</th>
+                    <th>Sensor Size</th>
+                    <th>Weight (kg/lbs)</th>
+                    <th>Top Speed (km/h/mph)</th>
+                    <th>Cost (USD)</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for drone in drones %}
+                <tr>
+                    <td>{{ drone[1] }}</td>
+                    <td>{{ drone[2] }}</td>
+                    <td>{{ drone[3] }}</td>
+                    <td>{{ drone[4] }} / {{ drone[5] }}</td>
+                    <td>{{ drone[6] }} / {{ drone[7] }}</td>
+                    <td>{{ drone[8] }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</body>
+
+</html>
